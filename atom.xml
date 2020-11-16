@@ -3,11 +3,11 @@
   <title>DanDahl</title>
   
   
-  <link href="https://danwzj.github.io/atom.xml" rel="self"/>
+  <link href="https://danwzj.github.io/blog/atom.xml" rel="self"/>
   
-  <link href="https://danwzj.github.io/"/>
+  <link href="https://danwzj.github.io/blog/"/>
   <updated>2020-11-16T02:31:41.286Z</updated>
-  <id>https://danwzj.github.io/</id>
+  <id>https://danwzj.github.io/blog/</id>
   
   <author>
     <name>DanDahl</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>Hexo 安装和配置</title>
-    <link href="https://danwzj.github.io/2020/11/16/hexo/1-start/"/>
-    <id>https://danwzj.github.io/2020/11/16/hexo/1-start/</id>
+    <link href="https://danwzj.github.io/blog/2020/11/16/hexo/1-start/"/>
+    <id>https://danwzj.github.io/blog/2020/11/16/hexo/1-start/</id>
     <published>2020-11-16T02:26:34.000Z</published>
     <updated>2020-11-16T02:31:41.286Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="个人博客搭建"><a href="#个人博客搭建" class="headerlink" title="个人博客搭建"></a>个人博客搭建</h1><blockquote><p>Hexo 搭建 GitPages 个人博客网站，一键部署</p></blockquote><h2 id="为什么使用-Hexo"><a href="#为什么使用-Hexo" class="headerlink" title="为什么使用 Hexo"></a>为什么使用 Hexo</h2><ul><li>Git 直接创建 GitPages 后直接提交就可以；下面是优点</li><li><a href="!https://hexo.bootcss.com/">Hexo 官网</a> 的描述<ul><li>快速、简洁且高效的博客框架</li></ul></li><li>特点<ul><li>超快速度：基于 Node.js</li><li>支持 Markdown 语法</li><li>主题有 首页/标签/分类/关于 页面和时间线记录，更利于操作和阅读</li><li>有数据采集的插件，可以记录网站访问人数等</li><li>一键部署：只需【一条指令】即可部署到 GitHub Pages, Heroku 或其他平台</li><li>插件和可扩展性：模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成</li></ul></li><li>Vue2.x 官网文档，就是使用了 Hexo，说明 Hexo 还是被采用度较高</li><li>Vue3.x 官网文档，使用了 VuePress 自己开发的文档管理工具，大概看了下，就是按照 Hexo 的模式改良的</li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>当前版本 5.2.0</code></p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul><li><a href="!http://nodejs.org/">Node.js</a>（版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本）</li><li><a href="!http://git-scm.com/">Git</a></li></ul><p>这两个都是最基本的，就不详细讲述了</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li>全局安装命令行工具 <code>npm install -g hexo-cli</code></li><li>本地安装 <code>npm install hexo</code></li></ul><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><ul><li>hexo init 创建项目文件，会生成一个标准的目录结构，切换到项目文件，安装依赖</li><li><code>hexo init &lt;folder&gt; &amp;&amp; cd folder &amp;&amp; npm install</code></li></ul><h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><ul><li>本地运行：<code>npm run server</code> 或 <code>hexo server</code>，详细看 <a href="#%E5%91%BD%E4%BB%A4">命令</a></li><li>到这里，就可以先本地运行，看下效果了，因为都有默认配置</li><li>然后看目录结构，并自定义配置</li></ul><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h3><ul><li>node_modules：项目安装的依赖</li><li>.gitignore：git 提交忽略（会自动生成）<ul><li>如果没有 public/ 项，添加上（发布的目录）</li></ul></li><li>package.json：项目管理</li></ul><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><ul><li>.config.yml：hexo 项目配置文件</li><li>scaffolds：生成文章的一些模板（post/page/draf）</li><li>source：文章的存放位置</li><li>themes：使用的主题本文件</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote><p>官网文档已经有详细说明，这里说几个基本需要修改的，更多内容请看官网文档</p></blockquote><ul><li>Site：网站（有助于 SEO）<ul><li>title：网站标题，即页签标题</li><li>subtitle：网站副标题</li><li>description：网站描述</li><li>keywords：网站关键词</li><li>author：作者</li><li>language：网站使用的语言，默认 en 英语<ul><li>zh-CN：表示用在中国大陆区域的中文。包括各种大方言、小方言、繁体、简体等等都可以被匹配到</li><li>zh-Hans：表示简体中文。适用区域范围是全宇宙用中文简体的地方，内容包括各种用简体的方言等</li></ul></li></ul></li><li>URL：网址<ul><li>url：必须是 <code>http://</code> 或 <code>https://</code><ul><li>比如：<code>https://&lt;yourGithubName&gt;.github.io</code></li><li>或者：<code>https://&lt;yourGithubName&gt;.github.io/blog</code></li></ul></li><li>root：网站跟目录<ul><li>如果网站存放在子目录，需设置为 <code>/blog/</code>，且 url <code>https://&lt;yourGithubName&gt;.github.io/blog</code></li></ul></li></ul></li><li>Directory：目录配置<ul><li>source_dir：sourece<ul><li>如果你更习惯于 src，这里可以设置 src；编译时，将按照 source_dir 目录来进行编译</li></ul></li><li>public_dir：编译打包后的目录，发布的话就是发布这里的代码</li></ul></li><li>deploy：发布配置<a href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2">一键发布</a><br>type: git // GitPages 发布<br>repo: <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;</a>:yourGithubName/yourGithubName.github.io //GitPages 仓库<br>branch: main //GitPages 仓库 settings-GitPagesSource</li></ul><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><ul><li>本地运行 <code>npm run server</code> 执行 <code>hexo server</code></li><li>清理目录 <code>npm run clean</code> 执行 <code>hexo clean</code></li><li>编译打包 <code>npm run build</code> 执行 <code>hexo build</code></li><li>一键发布 <code>npm run deploy</code> 执行 <code>hexo deploy</code></li></ul><h3 id="稍微改进一下"><a href="#稍微改进一下" class="headerlink" title="稍微改进一下"></a>稍微改进一下</h3><ul><li>package.json 中的 scripts 添加如下命令（熟悉 Node.js 的同学可以自定义更丰富的内容）</li><li>本地运行：start <code>npm run server</code></li><li>发布命令：public <code>npm run clean &amp;&amp; npm run build &amp;&amp; npm run deploy</code></li></ul><blockquote><p>这里插一句，如果以后文件内容过多，打包速度变慢后，可以使用 <strong>concurrently</strong> 插件，npm scripts 并发队列的插件，或者使用 Webpack + Vue/React 都可以</p></blockquote><h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><h3 id="创建-GitHubPages"><a href="#创建-GitHubPages" class="headerlink" title="创建 GitHubPages"></a>创建 GitHubPages</h3><ul><li>首先，你先要有一个<a href="!https://github.com/">GitHub</a>账户，没有的话去注册一个吧</li><li>注册完登录后，在 GitHub.com 中看到一个 New repository，新建仓库</li><li>Name：创建一个和你用户名相同的仓库，后面加.github.io<ul><li>Name 必须和你的 Github Name 相同</li><li>点击 create repository 新建完成</li></ul></li></ul><h3 id="生成-SSH-添加到-GitHub"><a href="#生成-SSH-添加到-GitHub" class="headerlink" title="生成 SSH 添加到 GitHub"></a>生成 SSH 添加到 GitHub</h3><ul><li>配置 Git 信息<ul><li><code>git config --global user.name &quot;yourname&quot;</code></li><li><code>git config --global user.name &quot;youremail&quot;</code></li></ul></li><li>查看<ul><li><code>git config user.name</code></li><li><code>git config user.email</code></li></ul></li><li>生成 SSH<ul><li><code>ssh -keygen -t rsa -C &quot;youremail&quot;</code></li><li>一般在 <code>C:\Users\用户\.ssh</code> 这个目录中<blockquote><p>如果报错 Key is invalid. You must supply a key in OpenSSH public key format，直接打开复制的格式会不正确</p></blockquote><ul><li>GitBase 进入路径 <code>~/.ssh/id_rsa.pub</code></li><li><code>cat ~/.ssh/id_rsa.pub</code> 进行复制</li></ul></li></ul></li></ul><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><ul><li>需要 <code>npm install --save hexo-deployer-git</code> 下载插件</li><li>一键部署，执行【public】即可<ul><li>上述 <code>npm run clean &amp;&amp; npm run build &amp;&amp; npm run deploy</code></li></ul></li></ul><blockquote><p>基本的发布部署配置基本就完成了；下面就是使用和其他配置了，如：</p></blockquote><ul><li>创建 post/page/draf 模板，写博客内容</li><li>使用和更换主题 themes 以及配置</li><li>添加页面访问统计：百度统计/不蒜子</li><li>评论系统</li><li>SEO 优化</li><li>也可以配置自己的<strong>个人域名</strong></li><li>coding page 上部署,实现国内外分流</li></ul><p>等等</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="个人博客搭建"><a href="#个人博客搭建" class="headerlink" title="个人博客搭建"></a>个人博客搭建</h1><blockquote><p>Hexo 搭建 GitPages 个人博客网站，一键部署</p></blockquote><h2 id="为什么使用-Hexo"><a href="#为什么使用-Hexo" class="headerlink" title="为什么使用 Hexo"></a>为什么使用 Hexo</h2><ul><li>Git 直接创建 GitPages 后直接提交就可以；下面是优点</li><li><a href="!https://hexo.bootcss.com/">Hexo 官网</a> 的描述<ul><li>快速、简洁且高效的博客框架</li></ul></li><li>特点<ul><li>超快速度：基于 Node.js</li><li>支持 Markdown 语法</li><li>主题有 首页/标签/分类/关于 页面和时间线记录，更利于操作和阅读</li><li>有数据采集的插件，可以记录网站访问人数等</li><li>一键部署：只需【一条指令】即可部署到 GitHub Pages, Heroku 或其他平台</li><li>插件和可扩展性：模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成</li></ul></li><li>Vue2.x 官网文档，就是使用了 Hexo，说明 Hexo 还是被采用度较高</li><li>Vue3.x 官网文档，使用了 VuePress 自己开发的文档管理工具，大概看了下，就是按照 Hexo 的模式改良的</li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>当前版本 5.2.0</code></p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul><li><a href="!http://nodejs.org/">Node.js</a>（版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本）</li><li><a href="!http://git-scm.com/">Git</a></li></ul><p>这两个都是最基本的，就不详细讲述了</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li>全局安装命令行工具 <code>npm install -g hexo-cli</code></li><li>本地安装 <code>npm install hexo</code></li></ul><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><ul><li>hexo init 创建项目文件，会生成一个标准的目录结构，切换到项目文件，安装依赖</li><li><code>hexo init &lt;folder&gt; &amp;&amp; cd folder &amp;&amp; npm install</code></li></ul><h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><ul><li>本地运行：<code>npm run server</code> 或 <code>hexo server</code>，详细看 <a href="#%E5%91%BD%E4%BB%A4">命令</a></li><li>到这里，就可以先本地运行，看下效果了，因为都有默认配置</li><li>然后看目录结构，并自定义配置</li></ul><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h3><ul><li>node_modules：项目安装的依赖</li><li>.gitignore：git 提交忽略（会自动生成）<ul><li>如果没有 public/ 项，添加上（发布的目录）</li></ul></li><li>package.json：项目管理</li></ul><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><ul><li>.config.yml：hexo 项目配置文件</li><li>scaffolds：生成文章的一些模板（post/page/draf）</li><li>source：文章的存放位置</li><li>themes：使用的主题本文件</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote><p>官网文档已经有详细说明，这里说几个基本需要修改的，更多内容请看官网文档</p></blockquote><ul><li>Site：网站（有助于 SEO）<ul><li>title：网站标题，即页签标题</li><li>subtitle：网站副标题</li><li>description：网站描述</li><li>keywords：网站关键词</li><li>author：作者</li><li>language：网站使用的语言，默认 en 英语<ul><li>zh-CN：表示用在中国大陆区域的中文。包括各种大方言、小方言、繁体、简体等等都可以被匹配到</li><li>zh-Hans：表示简体中文。适用区域范围是全宇宙用中文简体的地方，内容包括各种用简体的方言等</li></ul></li></ul></li><li>URL：网址<ul><li>url：必须是 <code>http://</code> 或 <code>https://</code><ul><li>比如：<code>https://&lt;yourGithubName&gt;.github.io</code></li><li>或者：<code>https://&lt;yourGithubName&gt;.github.io/blog</code></li></ul></li><li>root：网站跟目录<ul><li>如果网站存放在子目录，需设置为 <code>/blog/</code>，且 url <code>https://&lt;yourGithubName&gt;.github.io/blog</code></li></ul></li></ul></li><li>Directory：目录配置<ul><li>source_dir：sourece<ul><li>如果你更习惯于 src，这里可以设置 src；编译时，将按照 source_dir 目录来进行编译</li></ul></li><li>public_dir：编译打包后的目录，发布的话就是发布这里的代码</li></ul></li><li>deploy：发布配置<a href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2">一键发布</a><br>type: git // GitPages 发布<br>repo: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:yourGithubName/yourGithubName.github.io //GitPages 仓库<br>branch: main //GitPages 仓库 settings-GitPagesSource</li></ul><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><ul><li>本地运行 <code>npm run server</code> 执行 <code>hexo server</code></li><li>清理目录 <code>npm run clean</code> 执行 <code>hexo clean</code></li><li>编译打包 <code>npm run build</code> 执行 <code>hexo build</code></li><li>一键发布 <code>npm run deploy</code> 执行 <code>hexo deploy</code></li></ul><h3 id="稍微改进一下"><a href="#稍微改进一下" class="headerlink" title="稍微改进一下"></a>稍微改进一下</h3><ul><li>package.json 中的 scripts 添加如下命令（熟悉 Node.js 的同学可以自定义更丰富的内容）</li><li>本地运行：start <code>npm run server</code></li><li>发布命令：public <code>npm run clean &amp;&amp; npm run build &amp;&amp; npm run deploy</code></li></ul><blockquote><p>这里插一句，如果以后文件内容过多，打包速度变慢后，可以使用 <strong>concurrently</strong> 插件，npm scripts 并发队列的插件，或者使用 Webpack + Vue/React 都可以</p></blockquote><h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><h3 id="创建-GitHubPages"><a href="#创建-GitHubPages" class="headerlink" title="创建 GitHubPages"></a>创建 GitHubPages</h3><ul><li>首先，你先要有一个<a href="!https://github.com/">GitHub</a>账户，没有的话去注册一个吧</li><li>注册完登录后，在 GitHub.com 中看到一个 New repository，新建仓库</li><li>Name：创建一个和你用户名相同的仓库，后面加.github.io<ul><li>Name 必须和你的 Github Name 相同</li><li>点击 create repository 新建完成</li></ul></li></ul><h3 id="生成-SSH-添加到-GitHub"><a href="#生成-SSH-添加到-GitHub" class="headerlink" title="生成 SSH 添加到 GitHub"></a>生成 SSH 添加到 GitHub</h3><ul><li>配置 Git 信息<ul><li><code>git config --global user.name &quot;yourname&quot;</code></li><li><code>git config --global user.name &quot;youremail&quot;</code></li></ul></li><li>查看<ul><li><code>git config user.name</code></li><li><code>git config user.email</code></li></ul></li><li>生成 SSH<ul><li><code>ssh -keygen -t rsa -C &quot;youremail&quot;</code></li><li>一般在 <code>C:\Users\用户\.ssh</code> 这个目录中<blockquote><p>如果报错 Key is invalid. You must supply a key in OpenSSH public key format，直接打开复制的格式会不正确</p></blockquote><ul><li>GitBase 进入路径 <code>~/.ssh/id_rsa.pub</code></li><li><code>cat ~/.ssh/id_rsa.pub</code> 进行复制</li></ul></li></ul></li></ul><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><ul><li>需要 <code>npm install --save hexo-deployer-git</code> 下载插件</li><li>一键部署，执行【public】即可<ul><li>上述 <code>npm run clean &amp;&amp; npm run build &amp;&amp; npm run deploy</code></li></ul></li></ul><blockquote><p>基本的发布部署配置基本就完成了；下面就是使用和其他配置了，如：</p></blockquote><ul><li>创建 post/page/draf 模板，写博客内容</li><li>使用和更换主题 themes 以及配置</li><li>添加页面访问统计：百度统计/不蒜子</li><li>评论系统</li><li>SEO 优化</li><li>也可以配置自己的<strong>个人域名</strong></li><li>coding page 上部署,实现国内外分流</li></ul><p>等等</p>]]></content>
     
     
       
@@ -36,14 +36,14 @@
     
     
     
-    <category term="Hexo" scheme="https://danwzj.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://danwzj.github.io/blog/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Web 和 Web 标准</title>
-    <link href="https://danwzj.github.io/2020/11/16/web/2-standard/"/>
-    <id>https://danwzj.github.io/2020/11/16/web/2-standard/</id>
+    <link href="https://danwzj.github.io/blog/2020/11/16/web/2-standard/"/>
+    <id>https://danwzj.github.io/blog/2020/11/16/web/2-standard/</id>
     <published>2020-11-15T23:00:11.000Z</published>
     <updated>2020-11-15T23:01:20.493Z</updated>
     
@@ -58,14 +58,14 @@
     
     
     
-    <category term="Web" scheme="https://danwzj.github.io/tags/Web/"/>
+    <category term="Web" scheme="https://danwzj.github.io/blog/tags/Web/"/>
     
   </entry>
   
   <entry>
     <title>Web 概述</title>
-    <link href="https://danwzj.github.io/2020/11/16/web/1-summary/"/>
-    <id>https://danwzj.github.io/2020/11/16/web/1-summary/</id>
+    <link href="https://danwzj.github.io/blog/2020/11/16/web/1-summary/"/>
+    <id>https://danwzj.github.io/blog/2020/11/16/web/1-summary/</id>
     <published>2020-11-15T19:05:41.000Z</published>
     <updated>2020-11-16T02:27:35.324Z</updated>
     
@@ -83,7 +83,7 @@
     
     
     
-    <category term="Web" scheme="https://danwzj.github.io/tags/Web/"/>
+    <category term="Web" scheme="https://danwzj.github.io/blog/tags/Web/"/>
     
   </entry>
   
